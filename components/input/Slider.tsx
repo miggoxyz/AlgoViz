@@ -21,7 +21,7 @@ export const Slider = ({
         disabled={isDisabled}
         className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-700"
       />
-      <span className="text-center text-gray-300">Slow</span>
+      <span className="text-center text-gray-300">Fast</span>
     </div>
   );
 };
