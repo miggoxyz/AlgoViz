@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.default-line-color {
+  background-color: theme("colors.system.purple50");
+}
+
+.change-line-color {
+  background-color: theme("colors.system.green60");
+}
