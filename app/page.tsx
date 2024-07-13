@@ -5,6 +5,8 @@ import { Slider } from "@/components/input/Slider";
 import { useSortingAlgorithmContext } from "@/context/Visualiser";
 import { algorithmOptions } from "@/lib/utils";
 import { useEffect } from "react";
+import { RxReset } from "react-icons/rx";
+import { FaPlayCircle } from "react-icons/fa";
 
 export default function Home() {
   const {
@@ -14,6 +16,7 @@ export default function Home() {
     animationSpeed,
     selectedAlgorithm,
     setSelectedAlgorithm,
+    requiresReset,
   } = useSortingAlgorithmContext();
 
   useEffect(() => {
@@ -46,6 +49,16 @@ export default function Home() {
               onChange={handleSelectChange}
               isDisabled={isSorting}
             />
+            <button
+              className="flex items-center justify-center"
+              onClick={() => {}}
+            >
+              {requiresReset ? (
+                <RxReset className="text-gray-400 h-8 w-8" />
+              ) : (
+                <FaPlayCircle className="text-system-green60 h-8 w-8" />
+              )}
+            </button>
           </div>
         </div>
         <div className="relative h-[calc(100vh-66px)] w-full">
