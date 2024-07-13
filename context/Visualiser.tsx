@@ -50,7 +50,48 @@ export const SortingAlgorithmProvider = ({
     setIsSorting(false);
   };
 
-  const runAnimation = () => {};
+  const runAnimation = (animations: AnimationArrayType) => {
+    setIsSorting(true);
+    const inverseSpeed = (1 / animationSpeed) * 200;
+    const arrayLines = document.getElementsByClassName(
+      "array-line"
+    ) as HTMLCollectionOf<HTMLElement>;
+
+    const updateClassList = (
+      indexes: number[],
+      addClassName: string,
+      removeClassName: string
+    ) => {
+      indexes.forEach((index) => {
+        const arrayLine = arrayLines[index];
+        arrayLine.classList.add(addClassName);
+        arrayLine.classList.remove(removeClassName);
+      });
+    };
+
+    const updateHeightValue = (
+      index: number,
+      newHeight: number | undefined
+    ) => {
+      if (newHeight === undefined) return;
+      arrayLines[index].style.height = `${newHeight}px`;
+    };
+
+    animations.forEach((animation, index) => {
+      setTimeout(() => {
+        const [values, isSwapped] = animation;
+        if (!isSwapped) {
+          updateClassList(values, "change-line-color", "default-line-color");
+          setTimeout(() => {
+            updateClassList(values, "default-line-color", "change-line-color");
+          }, inverseSpeed);
+        } else {
+          const [lineIndex, newHeight] = values;
+          updateHeightValue(lineIndex, newHeight);
+        }
+      }, index * inverseSpeed);
+    });
+  };
 
   const value = {
     arrayToSort,

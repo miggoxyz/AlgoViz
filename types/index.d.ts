@@ -10,6 +10,8 @@ declare type SelectOptionsType = {
   label: string;
 };
 
+declare type AnimationArrayType = [number[], boolean][]; // [array, isSwapped]
+
 declare interface SliderProps {
   min?: number;
   max?: number;
@@ -38,6 +40,6 @@ declare interface SortingAlgorithmContextType {
   isAnimationComplete: boolean;
   setIsAnimationComplete: (isComplete: boolean) => void;
   resetArrayAndAnimation: () => void;
-  runAnimation: () => void;
+  runAnimation: (animations: AnimationArrayType) => void;
   requiresReset: boolean;
 }
