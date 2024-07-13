@@ -12,8 +12,8 @@ AlgoViz is an interactive web application designed to visualize common sorting a
   - Merge Sort
   - Quick Sort
   - Selection Sort
-- Adjustable input size and sorting speed
-- Step-by-step execution with detailed explanations
+- ~~Adjustable input size~~soon and sorting speed
+- ~~Step-by-step execution with detailed explanations~~ soon
 - Responsive design for various screen sizes
 
 ## Tech Stack
@@ -21,7 +21,7 @@ AlgoViz is an interactive web application designed to visualize common sorting a
 - **Frontend Framework**: Next.js
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **State Management**: React Context API
+- **State Management**: [React Context API](https://react.dev/learn/passing-data-deeply-with-context)
 - **Deployment**: Vercel
 
 ## Getting Started
@@ -53,12 +53,3 @@ yarn dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Project Structure
-
-- `/algorithms`: Contains TypeScript implementations of sorting algorithms
-- `/components`: Reusable React components
-- `/pages`: Next.js pages and routing
-- `/styles`: Global styles and Tailwind configuration
-- `/types`: TypeScript type definitions
-- `/utils`: Utility functions and helpers
